@@ -12,13 +12,7 @@ import { SignupComponent } from './components/signup/signup.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { HomeComponent } from './home/home.component';
-import { NgxUsefulSwiperModule } from 'ngx-useful-swiper'
 import { HttpClientModule } from '@angular/common/http';
-import {VgCoreModule} from '@videogular/ngx-videogular/core';
-import {VgControlsModule} from '@videogular/ngx-videogular/controls';
-import {VgOverlayPlayModule} from '@videogular/ngx-videogular/overlay-play';
-import {VgBufferingModule} from '@videogular/ngx-videogular/buffering';
-
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
@@ -53,8 +47,7 @@ import { CompletedTasksComponent } from './pages/completed-tasks/completed-tasks
     AppRoutingModule,
     MaterialModules,
     BrowserAnimationsModule,
-    FlexLayoutModule,
-    NgxUsefulSwiperModule,
+    FlexLayoutModule,    
     HttpClientModule,  
     MatTabsModule,
     MatDialogModule,

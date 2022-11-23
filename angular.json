@@ -34,10 +34,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss",
-              "./node_modules/swiper/swiper-bundle.css"
-              
-              
+              "src/styles.scss"  
               
             ],
             "scripts": []
@@ -63,14 +60,7 @@
                 }
               ],
               "outputHashing": "all"
-            },
-            "dev": {
-              "fileReplacements": [
-                {
-                  "replace": "src/environment.ts",
-                  "with": "src/environment.dev.ts"
-                }
-              ],
+            },         
             "development": {
               "buildOptimizer": false,
               "optimization": false,
