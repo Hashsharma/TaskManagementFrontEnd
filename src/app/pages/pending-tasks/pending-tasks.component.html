@@ -1,0 +1,70 @@
+<div
+  fxLayout="column"
+  fxLayoutAlign="center center"
+  style="height: 90vh; width: 90vw"
+>
+  <h1>Pending Tasks</h1>
+  <table
+    mat-table
+    [dataSource]="taskPendingList"
+    class="mat-elevation-z8 demo-table"
+  >
+
+    <!-- Serial Column -->
+    <ng-container matColumnDef="serial">
+        <th mat-header-cell *matHeaderCellDef>No</th>
+        <td mat-cell *matCellDef="let element; let i = index;">
+        {{i+1}}
+        </td>
+      </ng-container>
+    <!-- Title Column -->
+    <ng-container matColumnDef="title">
+      <th mat-header-cell *matHeaderCellDef>Title</th>
+      <td mat-cell *matCellDef="let element">
+        {{ element.task_title }}
+      </td>
+    </ng-container>
+    <!-- Description Column -->
+    <ng-container matColumnDef="description">
+      <th mat-header-cell *matHeaderCellDef>Description</th>
+      <td mat-cell *matCellDef="let element">
+        {{ element.task_description }}
+      </td>
+    </ng-container>
+
+    <!-- Date Column -->
+    <ng-container matColumnDef="date">
+      <th mat-header-cell *matHeaderCellDef>Date</th>
+      <td mat-cell *matCellDef="let element">
+        {{ element.task_created_datetime | date: "dd-MM-yyyy" }}
+      </td>
+    </ng-container>
+
+    <!-- Time Column -->
+    <ng-container matColumnDef="time">
+      <th mat-header-cell *matHeaderCellDef>Time</th>
+      <td mat-cell *matCellDef="let element">
+        {{ element.task_created_datetime | date: "HH:mm" }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef>Actions</th>
+      <td mat-cell *matCellDef="let element">
+        <button
+          mat-button
+          (click)="markAsTaskCompleted(element.task_rid, element.task_user_rid)"
+        >
+          Mark Completed
+        </button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+
+  <!-- Copyright 2022 Google LLC. All Rights Reserved.
+            Use of this source code is governed by an MIT-style license that
+            can be found in the LICENSE file at https://angular.io/license -->
+</div>
